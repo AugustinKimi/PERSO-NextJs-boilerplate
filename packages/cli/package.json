@@ -1,0 +1,29 @@
+{
+  "name": "@chersite/cli",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "setup": "node src/tasks/setup/setup.js",
+    "scaffold": "node src/tasks/scaffold-component/scaffold-component.js",
+    "reset": "rm -rf node_modules && rm -rf .turbo"
+  },
+  "devDependencies": {
+    "@wbe/debug": "^1.1.0",
+    "chalk": "^5.2.0",
+    "change-case": "^4.1.2",
+    "inquirer": "^9.1.4",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.1",
+    "vitest": "^0.25.8"
+  },
+  "lint-staged": {
+    "*.{tsx,ts,jsx,js,less,css,json,md}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "printWidth": 90,
+    "semi": false
+  }
+}

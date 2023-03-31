@@ -1,0 +1,19 @@
+import React from 'react';
+import css from './%%upperComponentName%%.module.less';
+
+interface IProps {
+  className?: string
+}
+
+const componentName = "%%upperComponentName%%";
+
+/**
+ * @name %%upperComponentName%%
+ */
+function %%upperComponentName%% (props: IProps): JSX.Element {
+  return <div className={`${css.root} ${props.className}`}>
+      {componentName}
+  </div>
+}
+
+export default %%upperComponentName%%

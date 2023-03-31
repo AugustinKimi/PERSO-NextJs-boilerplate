@@ -6,17 +6,24 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "scaffold": "cd packages/cli && npm  run scaffold",
     "lint": "next lint"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.6",
     "@types/node": "18.15.11",
     "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
+    "gsap": "^3.11.5",
+    "less": "^4.1.3",
     "next": "13.2.4",
+    "next-with-less": "^2.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sass": "^1.60.0",
+    "scss": "^0.2.4",
     "typescript": "5.0.2"
   }
 }

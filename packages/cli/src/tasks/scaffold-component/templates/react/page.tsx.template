@@ -1,0 +1,49 @@
+import css from "./%%upperComponentName%%.module.less";
+import { forwardRef, useRef, useImperativeHandle } from "react"
+import gsap from "gsap"
+
+interface IProps {}
+
+const componentName = "%%upperComponentName%%";
+
+/**
+ * @name %%upperComponentName%%
+ */
+const %%upperComponentName%% = (props: IProps, handleRef) => {
+  const $root = useRef<HTMLDivElement>(null)
+
+  const playIn = () =>
+    gsap
+      .timeline({ defaults: { duration: 1, ease: "power3.out" } })
+      .fromTo($root.current, { autoAlpha: 0, x: -50 }, { autoAlpha: 1, x: 0 })
+
+  const playOut = () =>
+    gsap
+      .timeline({ defaults: { duration: 1, ease: "power3.out" } })
+      .to($root.current, { autoAlpha: 0, x: 50 })
+
+  useImperativeHandle(handleRef, () => ({
+    playIn,
+    playOut,
+    $root: $root.current,
+  }))
+
+  return (
+    <div ref={$root} className={css.root}>
+      {componentName}
+    </div>
+  );
+};
+
+%%upperComponentName%%.displayName = componentName;
+export default forwardRef<HTMLDivElement>(%%upperComponentName%%);
+
+
+
+export async function getStaticProps() {
+    return {
+      props: {
+        id: '%%upperComponentName%%',
+      }, // will be passed to the page component as props
+    }
+  }
